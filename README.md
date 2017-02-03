@@ -1,4 +1,4 @@
 # QW.Repeater
-# Repeat data display component,need jquery and arttemplate.js
-# Author:Dzy [170123]
-# Thanks my wife ChenQianhua,Thanks my two son CongCong and ZhangZhang
+* 基于Jquery与arttemplate.js的重复数据展示组件
+* Author:Dzy [170123]
+* 感谢我的妻子前前，还有调皮的儿子琮琮和璋璋
