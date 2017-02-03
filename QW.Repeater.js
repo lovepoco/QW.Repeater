@@ -2,6 +2,7 @@
  * QW.Repeater.js
  * Repeat data display component
  * Author:Dzy [170123]
+ * Url:https://github.com/lovepoco/QW.Repeater
  * Thanks my wife ChenQianhua,Thanks my two son CongCong and ZhangZhang
  */
 
@@ -87,7 +88,9 @@
         self.reload = function (param) {
             var opts = self.options;
             if (param) {
-                opts.urlParameter = $.extend({}, opts.urlParameter, param);
+                self.options = $.extend({}, self.options, param);
+                self.init();
+                opts = self.options;
             }
             self.loadData();
         }
@@ -103,7 +106,7 @@
         }
 
         self.loading = {
-            LOADING_MSG: "<div class='dataloading'><p>loading...</p></div>",
+            LOADING_MSG: "<div class='dataloading'><p>Loading...</p></div>",
             warp: null,
             get: function () {
                 if (this.warp.is("tbody")) {
@@ -168,6 +171,12 @@
             },
             reload: function (param) {
                 self.reload(param);
+            },
+            reloadData: function (param) {
+                self.reload({ data: param });
+            },
+            reloadUrl: function (param) {
+                self.reload({ urlParameter: param });
             },
             loading: function (isEmpty) {
                 if (isEmpty) {
