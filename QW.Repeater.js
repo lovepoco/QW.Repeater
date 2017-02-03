@@ -176,7 +176,8 @@
                 self.reload({ data: param });
             },
             reloadUrl: function (param) {
-                self.reload({ urlParameter: param });
+				var urlp = $.extend({}, self.options.urlParameter, param);
+                self.reload({ urlParameter: urlp });
             },
             loading: function (isEmpty) {
                 if (isEmpty) {
