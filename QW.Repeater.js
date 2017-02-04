@@ -1,7 +1,7 @@
 ﻿/*
  * QW.Repeater.js
  * Repeat data display component
- * Author:Dzy [170123]
+ * Author:Dzy [www.daiziyi.com]
  * Url:https://github.com/lovepoco/QW.Repeater
  * Thanks my wife ChenQianhua,Thanks my two son CongCong and ZhangZhang
  */
