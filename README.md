@@ -1,6 +1,6 @@
 # QW.Repeater
 * 基于Jquery与arttemplate.js的重复数据展示组件
-* Author:[戴子意 DZY](http://www.daiziyi.com/)
+* Author：[戴子意 DZY](http://www.daiziyi.com/)
 * 感谢我的妻子前前，还有调皮的儿子琮琮和璋璋
 
 # Usage
