@@ -44,30 +44,30 @@ var opts=databox.QWRepeater("option", { tmplId: "#datatmpl2", });
 * **reload**
 刷新显示
 ```javascript
-var opts=databox.QWRepeater("reload", { tmplId: "#datatmpl2", });
+databox.QWRepeater("reload", { tmplId: "#datatmpl2", });
 ```
 * **reloadData**
 刷新显示,更新数据
 ```javascript
-var opts=databox.QWRepeater("reloadData", { rows[{name:"1"},{name:"2"}],total:20});
+databox.QWRepeater("reloadData", { rows[{name:"1"},{name:"2"}],total:20});
 ```
 * **reloadUrl**
 刷新显示
 ```javascript
-var opts=databox.QWRepeater("reloadUrl", { page:2 });
+databox.QWRepeater("reloadUrl", { page:2 });
 ```
 * **loading**
 显示加载提示
 ```javascript
-var opts=databox.QWRepeater("loading");
+databox.QWRepeater("loading");
 ```
 * **loaded**
 隐藏加载提示
 ```javascript
-var opts=databox.QWRepeater("loaded");
+databox.QWRepeater("loaded");
 ```
 * **destroy**
 释放实例
 ```javascript
-var opts=databox.QWRepeater("destroy");
+databox.QWRepeater("destroy");
 ```
