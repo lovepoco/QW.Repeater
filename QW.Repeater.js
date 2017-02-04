@@ -69,10 +69,10 @@
             self.loading.hide();
 
             var opts = self.options;
-            if (typeof opts.event_beforedraw == 'function') {
-                opts.event_beforedraw(self);
+            if (typeof opts.event_beforeDraw == 'function') {
+                opts.event_beforeDraw(self);
             }
-            if (opts.data) {
+            if (opts.call_isDataNull(opts.data)) {
                 var _render = template.compile(opts.tmplContent);
                 var _html = _render(opts.data);
                 self.container.append(_html);
@@ -205,7 +205,14 @@
         urlMethod: "get",  
         needEmpty: true,  
 		external:null,
-        event_beforedraw: null,   
+        call_isDataNull: function (d) {
+            var result = false;
+            if (d) {
+				result = true;
+            }
+            return result;
+        },
+        event_beforeDraw: null,   
         event_drawed: null
     };
 
