@@ -197,7 +197,7 @@
 
 
     $.QWRepeater.defaultOptions = {
-        tmplId: "datatmpl",   
+        tmplId: "#datatmpl",   
         tmplContent: "",  
         data: null,  
         url: null,   
