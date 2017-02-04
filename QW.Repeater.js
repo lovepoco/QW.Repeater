@@ -204,8 +204,9 @@
         urlParameter: null,
         urlMethod: "get",  
         needEmpty: true,  
+		external:null,
         event_beforedraw: null,   
-        event_drawed: null   
+        event_drawed: null
     };
 
     $.fn.QWRepeater = function () {
