@@ -40,6 +40,9 @@
             }
             self.loading.show();
             self.dataNull.hide();
+            if (typeof opts.call_beforeLoadData == 'function') {
+                opts.call_beforeLoadData(self.options);
+            }
             if (opts.url && opts.url.length > 0) {
                 opts.data = null;
                 self.loading.show();
@@ -49,7 +52,10 @@
                     data: opts.urlParameter,
                     dataType: "json",
                     success: function (data) {
-                        self.loading.hide();
+                        self.loading.hide();						
+						if (typeof opts.call_loadDataed == 'function') {
+							opts.call_loadDataed(self.options);
+						}
                         if (data) {
                             opts.data = data;
                             self.render();
@@ -60,6 +66,9 @@
                     }
                 });
             } else {
+				if (typeof opts.call_loadDataed == 'function') {
+					opts.call_loadDataed(self.options);
+				}
                 self.loading.hide();
                 self.render();
             }
@@ -187,6 +196,12 @@
             },
             loaded: function () {
                 self.loading.hide();
+            },
+            external: function (param) {
+                if (typeof (param) != "undefined") {
+                    self.options = $.extend({}, self.options, { external:param});
+                }
+                return self.options.external;
             }
         }
 
@@ -212,6 +227,8 @@
             }
             return result;
         },
+        call_beforeLoadData:null,
+        call_loadDataed:null,
         event_beforeDraw: null,   
         event_drawed: null
     };
