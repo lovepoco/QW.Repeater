@@ -106,16 +106,14 @@
 
         self.verify = function () {
             var opts = self.options;
-            if (self.container == null) {
-                throw new Error('[QWRepeater] error:container is null');
-            }
+			opts.tmplContent=opts.tmplContent || null;
             if (opts.tmplContent == null || opts.tmplContent.length < 1) {
                 throw new Error('[QWRepeater] error:template is null');
             }
         }
 
         self.loading = {
-            LOADING_MSG: "<div class='dataloading'><p>Loading...</p></div>",
+            LOADING_MSG: "<div class='qw_r_loading'><p>Loading...</p></div>",
             warp: null,
             get: function () {
                 if (this.warp.is("tbody")) {
@@ -139,10 +137,10 @@
                 var _d = this.get();
                 _d.hide();
             }
-        }
+        };
 		
         self.dataNull = {
-            NO_DATA_MSG: "<div class='dataNull'><p>No Data!</p></div>",
+            NO_DATA_MSG: "<div class='qw_r_empty'><p>No Data!</p></div>",
             warp: null,
             get: function () {
                 if (this.warp.is("tbody")) {
@@ -166,7 +164,7 @@
                 var _d = this.get();
                 _d.hide();
             }
-        }
+        };
 
         self.callMethod = {
             option: function (options) {
@@ -203,7 +201,7 @@
                 }
                 return self.options.external;
             }
-        }
+        };
 
         self.init();
         self.loadData();
