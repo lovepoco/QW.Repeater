@@ -119,7 +119,7 @@
                 if (this.warp.is("tbody")) {
                     this.warp = this.warp.parent().parent();
                 }
-                var target = $(".dataloading", this.warp);
+                var target = $(".qw_r_loading", this.warp);
                 if (target.length < 1) {
                     target = $(this.LOADING_MSG);
                     target.hide();
@@ -146,7 +146,7 @@
                 if (this.warp.is("tbody")) {
                     this.warp = this.warp.parent().parent();
                 }
-                var target = $(".dataNull", this.warp);
+                var target = $(".qw_r_empty", this.warp);
                 if (target.length < 1) {
                     target = $(this.NO_DATA_MSG);
                     target.hide();
