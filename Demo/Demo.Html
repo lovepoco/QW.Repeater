@@ -107,10 +107,10 @@
 	databox.QWRepeater({
         tmplId: "#datatmpl",
         data: data,
-        event_beforeDraw: function (t) {
+        onBeforeDraw: function (t) {
             t.container.append("<tr><td colspan=\"4\">界面绘制之前</td></tr>");
         },
-        event_drawed: function (t) {
+        onDrawed: function (t) {
             t.container.append("<tr><td colspan=\"4\">界面绘制之后</td></tr>");
         }
     });

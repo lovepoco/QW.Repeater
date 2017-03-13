@@ -40,8 +40,8 @@
             }
             self.loading.show();
             self.dataNull.hide();
-            if (typeof opts.call_beforeLoadData == 'function') {
-                opts.call_beforeLoadData(self.options);
+            if (typeof opts.onBeforeLoadData == 'function') {
+                opts.onBeforeLoadData(self.options);
             }
             if (opts.url && opts.url.length > 0) {
                 opts.data = null;
@@ -53,8 +53,8 @@
                     dataType: "json",
                     success: function (data) {
                         self.loading.hide();						
-						if (typeof opts.call_loadDataed == 'function') {
-							opts.call_loadDataed(self.options);
+						if (typeof opts.onLoadDataed == 'function') {
+							opts.onLoadDataed(self.options);
 						}
                         if (data) {
                             opts.data = data;
@@ -66,8 +66,8 @@
                     }
                 });
             } else {
-				if (typeof opts.call_loadDataed == 'function') {
-					opts.call_loadDataed(self.options);
+				if (typeof opts.onLoadDataed == 'function') {
+					opts.onLoadDataed(self.options);
 				}
                 self.loading.hide();
                 self.render();
@@ -78,10 +78,10 @@
             self.loading.hide();
 
             var opts = self.options;
-            if (typeof opts.event_beforeDraw == 'function') {
-                opts.event_beforeDraw(self);
+            if (typeof opts.onBeforeDraw == 'function') {
+                opts.onBeforeDraw(self);
             }
-            if (opts.call_isDataNull(opts.data)) {
+            if (opts.onDataNullCheck(opts.data)) {
                 var _render = template.compile(opts.tmplContent);
                 var _html = _render(opts.data);
                 self.container.append(_html);
@@ -89,8 +89,8 @@
                 self.dataNull.show();
             }
 
-            if (typeof opts.event_drawed == 'function') {
-                opts.event_drawed(self);
+            if (typeof opts.onDrawed == 'function') {
+                opts.onDrawed(self);
             }
         }
 
@@ -218,17 +218,17 @@
         urlMethod: "get",  
         needEmpty: true,  
 		external:null,
-        call_isDataNull: function (d) {
+        onDataNullCheck: function (d) {
             var result = false;
             if (d) {
 				result = true;
             }
             return result;
         },
-        call_beforeLoadData:null,
-        call_loadDataed:null,
-        event_beforeDraw: null,   
-        event_drawed: null
+        onBeforeLoadData:null,
+        onLoadDataed:null,
+        onBeforeDraw: null,   
+        onDrawed: null
     };
 
     $.fn.QWRepeater = function () {
