@@ -79,7 +79,7 @@
 
             var opts = self.options;
             if (typeof opts.onBeforeDraw == 'function') {
-                opts.onBeforeDraw(self);
+                opts.onBeforeDraw(self.container);
             }
             if (opts.onDataNullCheck(opts.data)) {
                 var _render = template.compile(opts.tmplContent);
@@ -90,7 +90,7 @@
             }
 
             if (typeof opts.onDrawed == 'function') {
-                opts.onDrawed(self);
+                opts.onDrawed(self.container);
             }
         }
 

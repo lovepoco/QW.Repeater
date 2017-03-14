@@ -36,8 +36,8 @@ $("#box").QWRepeater({
 | onDataNullCheck| 空值判定方法 | function (d) {return !!d;} | function (d) {} | 回调参数为静态数据data |
 | onBeforeLoadData| 数据加载前 | null | function (d) {} | 回调参数为实例的options |
 | onLoadDataed| 数据加载后 | null | function (d) {} | 回调参数为实例的options |
-| onBeforeDraw| 界面绘制前事件 | null | function (t) {} | 回调参数为实例本身 |
-| onDrawed| 界面绘制后事件 | null | function (t) {}  | 回调参数为实例本身 |
+| onBeforeDraw| 界面绘制前事件 | null | function (t) {} | 回调参数为实例容器 |
+| onDrawed| 界面绘制后事件 | null | function (t) {}  | 回调参数为实例容器 |
 
 # Method
 * **option**
