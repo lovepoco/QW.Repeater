@@ -81,7 +81,7 @@
             if (typeof opts.onBeforeDraw == 'function') {
                 opts.onBeforeDraw(self.container);
             }
-            if (opts.onDataNullCheck(opts.data)) {
+            if (opts.onDataNotNullCheck(opts.data)) {
                 var _render = template.compile(opts.tmplContent);
                 var _html = _render(opts.data);
                 self.container.append(_html);
@@ -218,7 +218,7 @@
         urlMethod: "get",  
         needEmpty: true,  
 		external:null,
-        onDataNullCheck: function (d) {
+        onDataNotNullCheck: function (d) {
             var result = false;
             if (d) {
 				result = true;
