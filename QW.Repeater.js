@@ -114,26 +114,26 @@
 
         self.loading = {
             LOADING_MSG: "<div class='qw_r_loading'><p>Loading...</p></div>",
-            warp: null,
+            wrap: null,
             get: function () {
-                if (this.warp.is("tbody")) {
-                    this.warp = this.warp.parent().parent();
+                if (this.wrap.is("tbody")) {
+                    this.wrap = this.wrap.parent().parent();
                 }
-                var target = $(".qw_r_loading", this.warp);
+                var target = $(".qw_r_loading", this.wrap);
                 if (target.length < 1) {
                     target = $(this.LOADING_MSG);
                     target.hide();
-                    this.warp.append(target);
+                    this.wrap.append(target);
                 }
                 return target;
             },
             show: function () {
-                this.warp = self.container;
+                this.wrap = self.container;
                 var _d = this.get();
                 _d.show();
             },
             hide: function () {
-                this.warp = self.container;
+                this.wrap = self.container;
                 var _d = this.get();
                 _d.hide();
             }
@@ -141,26 +141,26 @@
 		
         self.dataNull = {
             NO_DATA_MSG: "<div class='qw_r_empty'><p>No Data!</p></div>",
-            warp: null,
+            wrap: null,
             get: function () {
-                if (this.warp.is("tbody")) {
-                    this.warp = this.warp.parent().parent();
+                if (this.wrap.is("tbody")) {
+                    this.wrap = this.wrap.parent().parent();
                 }
-                var target = $(".qw_r_empty", this.warp);
+                var target = $(".qw_r_empty", this.wrap);
                 if (target.length < 1) {
                     target = $(this.NO_DATA_MSG);
                     target.hide();
-                    this.warp.append(target);
+                    this.wrap.append(target);
                 }
                 return target;
             },
             show: function () {
-                this.warp = self.container;
+                this.wrap = self.container;
                 var _d = this.get();
                 _d.show();
             },
             hide: function () {
-                this.warp = self.container;
+                this.wrap = self.container;
                 var _d = this.get();
                 _d.hide();
             }
