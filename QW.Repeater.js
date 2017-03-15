@@ -78,6 +78,9 @@
             self.loading.hide();
 
             var opts = self.options;
+            if (opts.needEmpty) {
+                self.container.empty();
+            }
             if (typeof opts.onBeforeDraw == 'function') {
                 opts.onBeforeDraw(self.container);
             }
