@@ -192,6 +192,7 @@
             loading: function (isEmpty) {
                 if (isEmpty) {
                     self.container.empty();
+					self.dataNull.hide();
                 }
                 self.loading.show();
             },
