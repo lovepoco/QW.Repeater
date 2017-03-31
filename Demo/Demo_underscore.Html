@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>QW.Repeater Demo By Dzy</title>
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+<script src="scripts/underscore.js"></script>
+<script src="../QW.Repeater.js"></script>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-5">
+      <div>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">商品</th>
+              <th scope="col" style="width: 10%;">商品价格</th>
+              <th scope="col" style="width: 5%;">库存</th>
+              <th scope="col" style="width: 5%;">销量</th>
+            </tr>
+          </thead>
+          <tbody id="datashow">
+          </tbody>
+        </table>
+      </div>
+      <button type="button" id="bt-opera1" class="btn btn-danger btn-block">改模板</button>
+    </div>
+    <div class="col-md-5">
+      <div>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">商品</th>
+              <th scope="col" style="width: 10%;">商品价格</th>
+              <th scope="col" style="width: 5%;">库存</th>
+            </tr>
+          </thead>
+          <tbody id="datashow2">
+          </tbody>
+        </table>
+      </div>
+      <button type="button" id="bt-loading" class="btn btn-warning btn-block">显示加载</button>
+      <button type="button" id="bt-loaded" class="btn btn-success btn-block">隐藏加载</button>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+
+</body>
+</html>
+<!--S Data Template-->
+<script id="datatmpl" type="text/html">
+<%_.each(rows, function(item, index, obj) {%>
+	<tr>
+        <td>
+            <a href="#productId=<%=item.ProductId%>"><%=item.ProductName%></a>
+        </td>
+        <td>
+            <b><%=item.SalePrice.toFixed(2)%></b>
+        </td>
+        <td><%=item.Stock%></td>
+        <td><%=item.SaleCounts%></td>
+    </tr>
+	<%});%>
+</script>
+<!--E Data Template-->
+<!--S Data Template-->
+<script id="datatmpl2" type="text/html">
+<%_.each(rows, function(item, index, obj) {%>
+	<tr>
+        <td>
+            <a href="#productId=<%=item.ProductId%>"><%=item.ProductName%></a>
+        </td>
+        <td>
+            <b><%=item.SalePrice.toFixed(2)%></b>
+        </td>
+        <td><%=item.Stock%></td>
+    </tr>
+	<%});%>
+</script>
+<!--E Data Template-->
+<!--数据 -->
+<script>
+    var data = {
+        "rows": [
+            { "ProductId": 213, "ProductName": "新款秋冬女长裤套装2014水钻装饰圆领上衣休闲长裤两件套", "SalePrice": 388.0000, "AddedDate": "\/Date(1483494847000+0800)\/", "Stock": 160, "SaleCounts": 0 }
+        , { "ProductId": 212, "ProductName": "新款秋显瘦收腰韩版英伦学院风长袖千鸟格圆领蓬蓬公主 女连衣裙", "SalePrice": 248.0000, "AddedDate": "\/Date(1483494846000+0800)\/", "Stock": 80, "SaleCounts": 0 }
+        , { "ProductId": 211, "ProductName": "新款秋装2014l黑色撞色呢料波点七分袖娃娃翻领连衣裙", "SalePrice": 268.0000, "AddedDate": "\/Date(1483494846000+0800)\/", "Stock": 80, "SaleCounts": 0 }
+        , { "ProductId": 210, "ProductName": "新款秋装2014时尚纯色百搭淑女 韩版格子圆领无袖 背心连衣裙 潮", "SalePrice": 258.0000, "AddedDate": "\/Date(1483494846000+0800)\/", "Stock": 160, "SaleCounts": 0 }
+        , { "ProductId": 209, "ProductName": "新款秋装外套2014 女 个性纯色荧光中袖修身显瘦小西装女士 外套", "SalePrice": 139.0000, "AddedDate": "\/Date(1483494846000+0800)\/", "Stock": 320, "SaleCounts": 0 }
+        , { "ProductId": 208, "ProductName": "新款秋装外套2014 女 通勤百搭毛呢披肩气质优雅小西装短外套 女", "SalePrice": 89.0000, "AddedDate": "\/Date(1483494846000+0800)\/", "Stock": 40, "SaleCounts": 0 }
+        , { "ProductId": 207, "ProductName": "新款秋装女套装2014长袖圆领上衣时尚撞色蓬蓬短裙两件套", "SalePrice": 278.0000, "AddedDate": "\/Date(1483494846000+0800)\/", "Stock": 120, "SaleCounts": 0 }
+        , { "ProductId": 206, "ProductName": "新款秋装时尚简约外翻小立领针织拼接长袖波点修身显瘦连衣裙 潮", "SalePrice": 289.0000, "AddedDate": "\/Date(1483494845000+0800)\/", "Stock": 120, "SaleCounts": 0 }
+        , { "ProductId": 205, "ProductName": "早秋新款女风衣2014时尚双排扣长袖翻领纯色花纹女外套", "SalePrice": 328.0000, "AddedDate": "\/Date(1483494845000+0800)\/", "Stock": 160, "SaleCounts": 0 }
+        , { "ProductId": 204, "ProductName": "时尚个性条纹波点印花2014早秋新款女翻领雪纺上衣衬衫", "SalePrice": 248.0000, "AddedDate": "\/Date(1483494845000+0800)\/", "Stock": 80, "SaleCounts": 0 }]
+        , "total": 151
+    };
+</script>
+<script>
+    var databox = $("#datashow");
+    var databox2 = $("#datashow2");
+    var showpage = $("#showpager");
+	databox.QWRepeater({
+        tmplId: "#datatmpl",
+        data: data,
+        onBeforeDraw: function (c) {
+			console.log(c.QWRepeater("option").data);
+            c.append("<tr><td colspan=\"4\">界面绘制之前</td></tr>");
+        },
+		onRender:function(o){
+			var _render = _.template(o.tmplContent);
+            var _html = _render(o.data);
+			return _html;
+		},
+        onDrawed: function (c) {
+            c.append("<tr><td colspan=\"4\">界面绘制之后</td></tr>");
+        }
+    });
+
+    $("#bt-opera1").click(function () {
+        databox.QWRepeater("reload", { tmplId: "#datatmpl2", });
+    })
+	
+	databox2.QWRepeater({
+        tmplId: "#datatmpl2",
+        data: data,
+		onRender:function(o){
+			var _render = _.template(o.tmplContent);
+            var _html = _render(o.data);
+			return _html;
+		},
+    });
+    $("#bt-loading").click(function () {
+		databox2.QWRepeater("loading");
+        //databox2.QWRepeater("loading",true);
+    })
+    $("#bt-loaded").click(function () {
+		databox2.QWRepeater("loaded");
+    })
+</script>

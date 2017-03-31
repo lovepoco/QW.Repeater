@@ -15,9 +15,7 @@
         if (!(this instanceof $.QWRepeater)) {
             return new $.QWRepeater(el, options);
         }
-        if (typeof template == "undefined") {
-            throw new Error('arttemplate.js module is required');
-        }
+		
         options = $.extend({}, $.QWRepeater.defaultOptions, options);
 
         var self = this;
@@ -85,8 +83,7 @@
                 opts.onBeforeDraw(self.container);
             }
             if (opts.onDataNotNullCheck(opts.data)) {
-                var _render = template.compile(opts.tmplContent);
-                var _html = _render(opts.data);
+                var _html =opts.onRender(opts);
                 self.container.append(_html);
             } else {
                 self.dataNull.show();
@@ -231,7 +228,12 @@
         },
         onBeforeLoadData:null,
         onLoadDataed:null,
-        onBeforeDraw: null,   
+        onBeforeDraw: null,  
+		onRender:function(o){
+			var _render = template.compile(o.tmplContent);
+			var _html = _render(o.data);
+			return _html;
+		},
         onDrawed: null
     };
 

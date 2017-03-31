@@ -1,5 +1,6 @@
 # QW.Repeater
-* 基于Jquery与arttemplate.js的重复数据展示组件
+* 基于Jquery(>1.7)结合模板引擎的重复数据展示组件
+* 默认使用arttemplate.js
 * Author：[戴子意 DZY](http://www.daiziyi.com/)
 * 感谢我的妻子前前，还有调皮的儿子琮琮和璋璋
 
@@ -34,9 +35,10 @@ $("#box").QWRepeater({
 | needEmpty| 是否清空容器 | true | - | 为false适用于下拉加载 |
 | external| 外部参数 | null | - | 组件本身不使用此参数 |
 | onDataNotNullCheck| 空值判定方法 | function (d) {return !!d;} |  | 回调参数为静态数据data |
-| onBeforeLoadData| 数据加载前 | null | function (d) {} | 回调参数为实例的options |
-| onLoadDataed| 数据加载后 | null | function (d) {} | 回调参数为实例的options |
+| onBeforeLoadData| 数据加载前 | null | function (o) {} | 回调参数为实例的options |
+| onLoadDataed| 数据加载后 | null | function (o) {} | 回调参数为实例的options |
 | onBeforeDraw| 界面绘制前事件 | null | function (t) {} | 回调参数为实例容器 |
+| onRender| 模板渲染过程 | null | function (o) {} | 回调参数为options |
 | onDrawed| 界面绘制后事件 | null | function (t) {}  | 回调参数为实例容器 |
 
 # Method
