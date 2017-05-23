@@ -50,14 +50,12 @@
                     data: opts.urlParameter,
                     dataType: "json",
                     success: function (data) {
-                        self.loading.hide();						
+                        self.loading.hide();
+						opts.data = data;		
 						if (typeof opts.onLoadDataed == 'function') {
 							opts.onLoadDataed(self.options);
 						}
-                        if (data) {
-                            opts.data = data;
-                            self.render();
-                        }
+						self.render();
                     },
                     error: function () {
                         self.loading.hide();
@@ -212,7 +210,7 @@
 
     $.QWRepeater.defaultOptions = {
         tmplId: "#datatmpl",   
-        tmplContent: "",  
+        tmplContent: "",
         data: null,  
         url: null,   
         urlParameter: null,
