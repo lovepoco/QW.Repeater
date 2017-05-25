@@ -52,6 +52,7 @@
                     success: function (data) {
                         self.loading.hide();
 						opts.data = data;		
+						self.options=opts;	
 						if (typeof opts.onLoadDataed == 'function') {
 							opts.onLoadDataed(self.options);
 						}
