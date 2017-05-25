@@ -31,6 +31,7 @@ $("#box").QWRepeater({
 | url| url地址 | null | - | 返回值为json |
 | urlParameter| url参数 | null | - | - |
 | urlMethod| 请求方式 | "get" | - | - |
+| urlDataType| 获取数据方式 | "json" | - | - |
 | data| 静态数据 | null | - | url优先级更高 | 
 | needEmpty| 是否清空容器 | true | - | 为false适用于下拉加载 |
 | external| 外部参数 | null | - | 组件本身不使用此参数 |

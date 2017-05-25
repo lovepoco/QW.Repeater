@@ -48,7 +48,7 @@
                     type: opts.urlMethod,
                     url: opts.url,
                     data: opts.urlParameter,
-                    dataType: "json",
+                    dataType: opts.urlDataType,
                     success: function (data) {
                         self.loading.hide();
 						opts.data = data;		
@@ -216,6 +216,7 @@
         url: null,   
         urlParameter: null,
         urlMethod: "get",  
+		urlDataType:"json",
         needEmpty: true,  
 		external:null,
         onDataNotNullCheck: function (d) {
