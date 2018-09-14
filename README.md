@@ -5,11 +5,11 @@
 * 感谢我的妻子前前，还有调皮的儿子琮琮和璋璋
 
 # Usage
-* **writing**
+## writing
 ```javascript
 $("选择器").QWRepeater({参数});
 ```
-* **examples**
+## examples
 ```javascript
 $("#box").QWRepeater({
         tmplId: "#datatmpl",
@@ -43,43 +43,36 @@ $("#box").QWRepeater({
 | onDrawed| 界面绘制后事件 | null | function (t) {}  | 回调参数为实例容器 |
 
 # Method
-* **option**
-设置获取选项
+## option 设置获取选项
+* **参数**
 ```javascript
 var opts=databox.QWRepeater("option", { tmplId: "#datatmpl2", });
 ```
-* **reload**
-刷新显示
+## reload 刷新显示
 ```javascript
 databox.QWRepeater("reload", { tmplId: "#datatmpl2", });
 ```
-* **reloadData**
-刷新显示,更新数据
+## reloadData 刷新显示,更新数据
 ```javascript
 databox.QWRepeater("reloadData", { rows[{name:"1"},{name:"2"}],total:20});
 ```
-* **reloadUrl**
-刷新显示
+## reloadUrl 刷新显示
 ```javascript
 databox.QWRepeater("reloadUrl", { page:2 });
 ```
-* **loading**
-显示加载提示
+## loading 显示加载提示
 ```javascript
 databox.QWRepeater("loading");
 ```
-* **loaded**
-隐藏加载提示
+## loaded 隐藏加载提示
 ```javascript
 databox.QWRepeater("loaded");
 ```
-* **destroy**
-释放实例
+## destroy 释放实例
 ```javascript
 databox.QWRepeater("destroy");
 ```
-* **external**
-设置获取外部参数
+## external 设置获取外部参数
 ```javascript
 var exdata=databox.QWRepeater("external");
 ```
