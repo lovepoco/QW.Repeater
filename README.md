@@ -44,25 +44,29 @@ $("#box").QWRepeater({
 
 # Method
 ## option 设置获取选项
-* **参数**
+* options 选填 参数
 ```javascript
 var opts=databox.QWRepeater("option", { tmplId: "#datatmpl2", });
 ```
 ## reload 刷新显示
+* options 选填 参数
 ```javascript
 databox.QWRepeater("reload", { tmplId: "#datatmpl2", });
 ```
 ## reloadData 刷新显示,更新数据
+* data 选填 数据
 ```javascript
 databox.QWRepeater("reloadData", { rows[{name:"1"},{name:"2"}],total:20});
 ```
 ## reloadUrl 刷新显示
+* urlParameter 选填 url参数
 ```javascript
 databox.QWRepeater("reloadUrl", { page:2 });
 ```
 ## loading 显示加载提示
+* isEmpty 选填 是否清空容器
 ```javascript
-databox.QWRepeater("loading");
+databox.QWRepeater("loading",true);
 ```
 ## loaded 隐藏加载提示
 ```javascript
@@ -73,6 +77,7 @@ databox.QWRepeater("loaded");
 databox.QWRepeater("destroy");
 ```
 ## external 设置获取外部参数
+* external 选填 外部参数
 ```javascript
 var exdata=databox.QWRepeater("external");
 ```
