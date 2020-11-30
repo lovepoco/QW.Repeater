@@ -81,7 +81,8 @@
             if (typeof opts.onBeforeDraw == 'function') {
                 opts.onBeforeDraw(self.container);
             }
-            if (opts.onDataNotNullCheck(opts.data)) {
+            if (opts.onCheckNotNullData(opts.data)) {
+                self.dataNull.hide();
                 var _html =opts.onRender(opts);
                 self.container.append(_html);
             } else {
@@ -219,7 +220,7 @@
 		urlDataType:"json",
         needEmpty: true,  
 		external:null,
-        onDataNotNullCheck: function (d) {
+        onCheckNotNullData: function (d) {
             var result = false;
             if (d) {
 				result = true;
