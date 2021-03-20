@@ -1,4 +1,4 @@
-﻿/*
+/*
  * QW.Repeater.js
  * Repeat data display component
  * Author:Dzy [www.daiziyi.com]
@@ -81,12 +81,12 @@
             if (typeof opts.onBeforeDraw == 'function') {
                 opts.onBeforeDraw(self.container);
             }
-            if (opts.onCheckNotNullData(opts.data)) {
+            if (opts.isNullData(opts.data)) {
+                self.dataNull.show();
+            } else {
                 self.dataNull.hide();
                 var _html =opts.onRender(opts);
                 self.container.append(_html);
-            } else {
-                self.dataNull.show();
             }
 
             if (typeof opts.onDrawed == 'function') {
@@ -220,10 +220,10 @@
 		urlDataType:"json",
         needEmpty: true,  
 		external:null,
-        onCheckNotNullData: function (d) {
-            var result = false;
+        isNullData: function (d) {
+            var result = true;
             if (d) {
-				result = true;
+				result = false;
             }
             return result;
         },

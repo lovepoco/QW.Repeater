@@ -31,11 +31,11 @@ $("#box").QWRepeater({
 | url| url地址 | null | - | 返回值为json |
 | urlParameter| url参数 | null | - | - |
 | urlMethod| 请求方式 | "get" | - | - |
-| urlDataType| 获取数据方式 | "json" | - | - |
+| urlDataType| 数据格式 | "json" | - | - |
 | data| 静态数据 | null | - | url优先级更高 | 
 | needEmpty| 是否清空容器 | true | - | 为false适用于下拉加载 |
 | external| 外部参数 | null | - | 组件本身不使用此参数 |
-| onCheckNotNullData| 空值判定方法 | function (d) {return !!d;} |  | 回调参数为静态数据data |
+| isNullData| 空值判定方法 | function (d) {return !d;} |  | 回调参数为静态数据data |
 | onBeforeLoadData| 数据加载前 | null | function (o) {} | 回调参数为实例的options |
 | onLoadDataed| 数据加载后 | null | function (o) {} | 回调参数为实例的options |
 | onBeforeDraw| 界面绘制前事件 | null | function (t) {} | 回调参数为实例容器 |
