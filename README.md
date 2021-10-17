@@ -3,6 +3,7 @@
 * 默认使用arttemplate.js
 * Author：[戴子意 DZY](http://www.daiziyi.com/)
 * 感谢我的妻子前前，还有调皮的儿子琮琮和璋璋
+* 代码维护地址已迁移至：https://gitee.com/u5web/QW.Repeater
 
 # Usage
 ## writing
